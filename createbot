@@ -1,0 +1,14 @@
+# telegram-custom-client/bot_management.py
+from telegram import Bot
+from telegram.ext import Updater
+
+def create_bot(token, bot_name):
+    bot = Bot(token=token)
+    updater = Updater(token=token, use_context=True)
+    # Simulate BotFather command
+    updater.bot.send_message(
+        chat_id=YOUR_USER_ID, 
+        text=f"/newbot {bot_name}"
+    )
+    # Extract new bot token from response (requires parsing updates)
+    return new_bot_token
